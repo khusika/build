@@ -240,7 +240,7 @@ function create_new_rootfs_cache_via_debootstrap() {
 
 	if [[ -f $SDCARD/etc/default/console-setup ]]; then
 		# @TODO: Should be configurable.
-		sed -e 's/CHARMAP=.*/CHARMAP="UTF-8"/' -e 's/FONTSIZE=.*/FONTSIZE="8x16"/' \
+		sed -e 's/CHARMAP=.*/CHARMAP="UTF-8"/' -e 's/FONTSIZE=.*/FONTSIZE="16x32"/' \
 			-e 's/CODESET=.*/CODESET="guess"/' -i "$SDCARD/etc/default/console-setup"
 		chroot_sdcard LC_ALL=C LANG=C setupcon --save --force
 	fi
